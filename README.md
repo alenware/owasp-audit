@@ -28,7 +28,7 @@ Para un repositorio dado, la skill deja:
 Requisitos: Python 3.10 o superior (solo biblioteca estándar) y bash. Funciona en Linux, macOS y WSL.
 
 ```bash
-git clone https://github.com/iggtht/owasp-audit.git
+git clone https://github.com/alenware/owasp-audit.git
 cd owasp-audit
 ./install.sh            # copia la skill a ~/.claude/skills/owasp-audit
 ```
