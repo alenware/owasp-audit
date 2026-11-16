@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: vulnerable-express-app
+expected_outcome: |
+  Auditoría de una API Express con siete fallos plantados. Un buen resultado los encuentra con evidencia archivo:línea (BOLA en GET /orders/:id, SQL injection en /products, mass assignment de role en PATCH /users/me, MD5 para contraseñas, secreto JWT en el código, fail-open en requireRole, stack trace en el manejador de errores), da veredicto NO-SHIP, escribe tests de seguridad (al menos BOLA con dos usuarios) y declara qué no se revisó, sin afirmar que el proyecto cumple el Top 10.
+context:
+  scaffold_script: place-files.sh

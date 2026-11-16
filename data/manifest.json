@@ -1,0 +1,72 @@
+{
+ "captured": "2026-11-16",
+ "sources": {
+  "asvs": {
+   "edition": "ASVS 5.0.0 (estable, 30 may 2025)",
+   "url": "https://raw.githubusercontent.com/OWASP/ASVS/v5.0.0/5.0/docs_en/OWASP_Application_Security_Verification_Standard_5.0.0_en.flat.json"
+  },
+  "top10_web": {
+   "edition": "OWASP Top 10:2025 (vigente)",
+   "url": "https://github.com/OWASP/Top10/tree/master/2025/docs/en"
+  },
+  "cheatsheets": {
+   "edition": "IndexASVS (keyed a ASVS 5.0.x)",
+   "url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/master/IndexASVS.md"
+  },
+  "api_top10": {
+   "edition": "API Security Top 10 2023 (vigente)",
+   "url": "https://api-security.owasp.org/editions/2023/en/0x11-t10"
+  },
+  "llm_top10": {
+   "edition": "LLM Top 10 2025",
+   "url": "https://genai.owasp.org/llm-top-10/"
+  },
+  "agentic_top10": {
+   "edition": "Top 10 for Agentic Applications 2026 (9 dic 2025; nombres desde fuentes secundarias)",
+   "url": "https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/"
+  },
+  "wstg": {
+   "edition": "WSTG v4.2 estable; usar IDs WSTG-v42-*",
+   "url": "https://owasp.org/www-project-web-security-testing-guide/"
+  }
+ },
+ "pending_upstream": [
+  "ASVS 5.0.1 (sin fecha)",
+  "Mapeo OpenCRE a ASVS 5.0 (la API sigue en 4.0.3)",
+  "Índice Top 10 de las Cheat Sheets todavía en 2021",
+  "WSTG 5.0 cambia IDs (INPV→INJT, nuevas APIT y WASM)"
+ ],
+ "generated": "2026-11-16",
+ "generated_files": {
+  "asvs-5.0.0.flat.json": "8201b20eec2908c3380ac600c91c8ba746346fbb808859366abb232027532311",
+  "asvs-5.0.0.index.json": "e5cf2d903cf8fd4c6a4f212e1740e12759d90f774a9d7f38ce4650be79b8b8b6",
+  "cwe-to-top10-2025.json": "0b84f22b58b163c4f3f9da47c9efeffc05901d6791a88070688fba99f0203966",
+  "asvs5-to-cheatsheets.json": "e70847f0d1d682dc2d34325b871a3ac7907a4767f3fc7d3dba582a09a51e4b70"
+ },
+ "summary": {
+  "asvs": {
+   "requirements": 345,
+   "counts_by_level": {
+    "1": 70,
+    "2": 183,
+    "3": 92
+   }
+  },
+  "top10_2025_cwe_counts": {
+   "A01": 40,
+   "A02": 16,
+   "A03": 6,
+   "A04": 32,
+   "A05": 37,
+   "A06": 39,
+   "A07": 36,
+   "A08": 14,
+   "A09": 5,
+   "A10": 24
+  },
+  "cheatsheets": {
+   "sections": 69,
+   "with_links": 67
+  }
+ }
+}

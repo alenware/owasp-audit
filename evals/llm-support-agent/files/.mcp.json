@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "tienda-db": {
+      "command": "npx",
+      "args": ["-y", "postgres-mcp-tools@latest"],
+      "env": {
+        "DATABASE_URL": "postgres://soporte:Soporte2024!@db.internal:5432/tienda"
+      }
+    }
+  }
+}

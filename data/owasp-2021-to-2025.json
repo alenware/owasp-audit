@@ -1,0 +1,30 @@
+{
+ "version": "OWASP Top 10 2021 -> 2025",
+ "captured": "2026-11-16",
+ "source": "https://top10.owasp.org/2025/0x00_2025-Introduction/",
+ "note": "Los números A01-A10 cambiaron de significado en siete posiciones. Traducir siempre por nombre, nunca por número.",
+ "2025": {
+  "A01": {"name": "Broken Access Control", "from_2021": ["A01", "A10"], "change": "Absorbe SSRF (A10:2021, CWE-918)."},
+  "A02": {"name": "Security Misconfiguration", "from_2021": ["A05"], "change": "Sube del #5 al #2."},
+  "A03": {"name": "Software Supply Chain Failures", "from_2021": ["A06"], "change": "Amplía 'Vulnerable and Outdated Components' a dependencias comprometidas, builds, CI/CD e IDEs. Sale de la encuesta comunitaria."},
+  "A04": {"name": "Cryptographic Failures", "from_2021": ["A02"], "change": "Baja del #2 al #4."},
+  "A05": {"name": "Injection", "from_2021": ["A03"], "change": "Incluye XSS. Baja del #3 al #5."},
+  "A06": {"name": "Insecure Design", "from_2021": ["A04"], "change": "Baja del #4 al #6."},
+  "A07": {"name": "Authentication Failures", "from_2021": ["A07"], "change": "Renombrada (antes 'Identification and Authentication Failures')."},
+  "A08": {"name": "Software or Data Integrity Failures", "from_2021": ["A08"], "change": "Sin cambio de posición."},
+  "A09": {"name": "Security Logging & Alerting Failures", "from_2021": ["A09"], "change": "Renombrada (antes '... Monitoring Failures'). Sale de la encuesta comunitaria."},
+  "A10": {"name": "Mishandling of Exceptional Conditions", "from_2021": [], "change": "Nueva: no prevenir, no detectar o responder mal a condiciones excepcionales (fail-open, catch vacíos, errores que filtran datos)."}
+ },
+ "2021": {
+  "A01": {"name": "Broken Access Control", "to_2025": "A01"},
+  "A02": {"name": "Cryptographic Failures", "to_2025": "A04"},
+  "A03": {"name": "Injection", "to_2025": "A05"},
+  "A04": {"name": "Insecure Design", "to_2025": "A06"},
+  "A05": {"name": "Security Misconfiguration", "to_2025": "A02"},
+  "A06": {"name": "Vulnerable and Outdated Components", "to_2025": "A03"},
+  "A07": {"name": "Identification and Authentication Failures", "to_2025": "A07"},
+  "A08": {"name": "Software and Data Integrity Failures", "to_2025": "A08"},
+  "A09": {"name": "Security Logging and Monitoring Failures", "to_2025": "A09"},
+  "A10": {"name": "Server-Side Request Forgery (SSRF)", "to_2025": "A01"}
+ }
+}

@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: clean-express-app
+expected_outcome: |
+  Revisión de la misma API ya corregida. Mide falsos positivos: un buen resultado no reporta como confirmado ningún Critical o High, no marca como falta de autorización las rutas /admin protegidas a nivel de router, no da por SQL injection el ORDER BY con lista permitida, señala la ausencia de lockfile como observación de cadena de suministro, da un veredicto de publicable (quizá con reservas) y declara qué no se pudo verificar.
+context:
+  scaffold_script: place-files.sh

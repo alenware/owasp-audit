@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: llm-support-agent
+expected_outcome: |
+  Revisión de un agente LLM multi-tenant con fallos plantados. Un buen resultado activa los catálogos LLM y Agentic y encuentra: refund_order sin autorización ni límites (LLM06/ASI02/ASI03), retrieval sin filtro de tenant (LLM08/LLM02), salida del modelo sin escapar en /chat/widget (LLM05, XSS), secreto en el system prompt (LLM07), SSRF en fetch_url con follow_redirects, contraseña en claro y servidor MCP sin fijar versión en .mcp.json (ASI04/A03), bucle de herramientas sin límite (LLM10/ASI08). Insiste en que el modelo no es la frontera de autorización y escribe tests deterministas.
+context:
+  scaffold_script: place-files.sh

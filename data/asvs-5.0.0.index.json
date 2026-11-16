@@ -1,0 +1,1957 @@
+{
+ "version": "5.0.0",
+ "id_format": "v5.0.0-<chapter>.<section>.<req> (p. ej. v5.0.0-8.2.2)",
+ "counts_by_level": {
+  "1": 70,
+  "2": 183,
+  "3": 92
+ },
+ "total": 345,
+ "chapters": {
+  "V1": {
+   "name": "Encoding and Sanitization",
+   "sections": {
+    "V1.1": {
+     "name": "Encoding and Sanitization Architecture",
+     "kind": "implementation",
+     "requirements": [
+      {
+       "id": "V1.1.1",
+       "L": 2
+      },
+      {
+       "id": "V1.1.2",
+       "L": 2
+      }
+     ]
+    },
+    "V1.2": {
+     "name": "Injection Prevention",
+     "kind": "implementation",
+     "requirements": [
+      {
+       "id": "V1.2.1",
+       "L": 1
+      },
+      {
+       "id": "V1.2.2",
+       "L": 1
+      },
+      {
+       "id": "V1.2.3",
+       "L": 1
+      },
+      {
+       "id": "V1.2.4",
+       "L": 1
+      },
+      {
+       "id": "V1.2.5",
+       "L": 1
+      },
+      {
+       "id": "V1.2.6",
+       "L": 2
+      },
+      {
+       "id": "V1.2.7",
+       "L": 2
+      },
+      {
+       "id": "V1.2.8",
+       "L": 2
+      },
+      {
+       "id": "V1.2.9",
+       "L": 2
+      },
+      {
+       "id": "V1.2.10",
+       "L": 3
+      }
+     ]
+    },
+    "V1.3": {
+     "name": "Sanitization",
+     "kind": "implementation",
+     "requirements": [
+      {
+       "id": "V1.3.1",
+       "L": 1
+      },
+      {
+       "id": "V1.3.2",
+       "L": 1
+      },
+      {
+       "id": "V1.3.3",
+       "L": 2
+      },
+      {
+       "id": "V1.3.4",
+       "L": 2
+      },
+      {
+       "id": "V1.3.5",
+       "L": 2
+      },
+      {
+       "id": "V1.3.6",
+       "L": 2
+      },
+      {
+       "id": "V1.3.7",
+       "L": 2
+      },
+      {
+       "id": "V1.3.8",
+       "L": 2
+      },
+      {
+       "id": "V1.3.9",
+       "L": 2
+      },
+      {
+       "id": "V1.3.10",
+       "L": 2
+      },
+      {
+       "id": "V1.3.11",
+       "L": 2
+      },
+      {
+       "id": "V1.3.12",
+       "L": 3
+      }
+     ]
+    },
+    "V1.4": {
+     "name": "Memory, String, and Unmanaged Code",
+     "kind": "implementation",
+     "requirements": [
+      {
+       "id": "V1.4.1",
+       "L": 2
+      },
+      {
+       "id": "V1.4.2",
+       "L": 2
+      },
+      {
+       "id": "V1.4.3",
+       "L": 2
+      }
+     ]
+    },
+    "V1.5": {
+     "name": "Safe Deserialization",
+     "kind": "implementation",
+     "requirements": [
+      {
+       "id": "V1.5.1",
+       "L": 1
+      },
+      {
+       "id": "V1.5.2",
+       "L": 2
+      },
+      {
+       "id": "V1.5.3",
+       "L": 3
+      }
+     ]
+    }
+   }
+  },
+  "V2": {
+   "name": "Validation and Business Logic",
+   "sections": {
+    "V2.1": {
+     "name": "Validation and Business Logic Documentation",
+     "kind": "documentation",
+     "requirements": [
+      {
+       "id": "V2.1.1",
+       "L": 1
+      },
+      {
+       "id": "V2.1.2",
+       "L": 2
+      },
+      {
+       "id": "V2.1.3",
+       "L": 2
+      }
+     ]
+    },
+    "V2.2": {
+     "name": "Input Validation",
+     "kind": "implementation",
+     "requirements": [
+      {
+       "id": "V2.2.1",
+       "L": 1
+      },
+      {
+       "id": "V2.2.2",
+       "L": 1
+      },
+      {
+       "id": "V2.2.3",
+       "L": 2
+      }
+     ]
+    },
+    "V2.3": {
+     "name": "Business Logic Security",
+     "kind": "implementation",
+     "requirements": [
+      {
+       "id": "V2.3.1",
+       "L": 1
+      },
+      {
+       "id": "V2.3.2",
+       "L": 2
+      },
+      {
+       "id": "V2.3.3",
+       "L": 2
+      },
+      {
+       "id": "V2.3.4",
+       "L": 2
+      },
+      {
+       "id": "V2.3.5",
+       "L": 3
+      }
+     ]
+    },
+    "V2.4": {
+     "name": "Anti-automation",
+     "kind": "implementation",
+     "requirements": [
+      {
+       "id": "V2.4.1",
+       "L": 2
+      },
+      {
+       "id": "V2.4.2",
+       "L": 3
+      }
+     ]
+    }
+   }
+  },
+  "V3": {
+   "name": "Web Frontend Security",
+   "sections": {
+    "V3.1": {
+     "name": "Web Frontend Security Documentation",
+     "kind": "documentation",
+     "requirements": [
+      {
+       "id": "V3.1.1",
+       "L": 3
+      }
+     ]
+    },
+    "V3.2": {
+     "name": "Unintended Content Interpretation",
+     "kind": "implementation",
+     "requirements": [
+      {
+       "id": "V3.2.1",
+       "L": 1
+      },
+      {
+       "id": "V3.2.2",
+       "L": 1
+      },
+      {
+       "id": "V3.2.3",
+       "L": 3
+      }
+     ]
+    },
+    "V3.3": {
+     "name": "Cookie Setup",
+     "kind": "implementation",
+     "requirements": [
+      {
+       "id": "V3.3.1",
+       "L": 1
+      },
+      {
+       "id": "V3.3.2",
+       "L": 2
+      },
+      {
+       "id": "V3.3.3",
+       "L": 2
+      },
+      {
+       "id": "V3.3.4",
+       "L": 2
+      },
+      {
+       "id": "V3.3.5",
+       "L": 3
+      }
+     ]
+    },
+    "V3.4": {
+     "name": "Browser Security Mechanism Headers",
+     "kind": "implementation",
+     "requirements": [
+      {
+       "id": "V3.4.1",
+       "L": 1
+      },
+      {
+       "id": "V3.4.2",
+       "L": 1
+      },
+      {
+       "id": "V3.4.3",
+       "L": 2
+      },
+      {
+       "id": "V3.4.4",
+       "L": 2
+      },
+      {
+       "id": "V3.4.5",
+       "L": 2
+      },
+      {
+       "id": "V3.4.6",
+       "L": 2
+      },
+      {
+       "id": "V3.4.7",
+       "L": 3
+      },
+      {
+       "id": "V3.4.8",
+       "L": 3
+      }
+     ]
+    },
+    "V3.5": {
+     "name": "Browser Origin Separation",
+     "kind": "implementation",
+     "requirements": [
+      {
+       "id": "V3.5.1",
+       "L": 1
+      },
+      {
+       "id": "V3.5.2",
+       "L": 1
+      },
+      {
+       "id": "V3.5.3",
+       "L": 1
+      },
+      {
+       "id": "V3.5.4",
+       "L": 2
+      },
+      {
+       "id": "V3.5.5",
+       "L": 2
+      },
+      {
+       "id": "V3.5.6",
+       "L": 3
+      },
+      {
+       "id": "V3.5.7",
+       "L": 3
+      },
+      {
+       "id": "V3.5.8",
+       "L": 3
+      }
+     ]
+    },
+    "V3.6": {
+     "name": "External Resource Integrity",
+     "kind": "implementation",
+     "requirements": [
+      {
+       "id": "V3.6.1",
+       "L": 3
+      }
+     ]
+    },
+    "V3.7": {
+     "name": "Other Browser Security Considerations",
+     "kind": "implementation",
+     "requirements": [
+      {
+       "id": "V3.7.1",
+       "L": 2
+      },
+      {
+       "id": "V3.7.2",
+       "L": 2
+      },
+      {
+       "id": "V3.7.3",
+       "L": 3
+      },
+      {
+       "id": "V3.7.4",
+       "L": 3
+      },
+      {
+       "id": "V3.7.5",
+       "L": 3
+      }
+     ]
+    }
+   }
+  },
+  "V4": {
+   "name": "API and Web Service",
+   "sections": {
+    "V4.1": {
+     "name": "Generic Web Service Security",
+     "kind": "implementation",
+     "requirements": [
+      {
+       "id": "V4.1.1",
+       "L": 1
+      },
+      {
+       "id": "V4.1.2",
+       "L": 2
+      },
+      {
+       "id": "V4.1.3",
+       "L": 2
+      },
+      {
+       "id": "V4.1.4",
+       "L": 3
+      },
+      {
+       "id": "V4.1.5",
+       "L": 3
+      }
+     ]
+    },
+    "V4.2": {
+     "name": "HTTP Message Structure Validation",
+     "kind": "implementation",
+     "requirements": [
+      {
+       "id": "V4.2.1",
+       "L": 2
+      },
+      {
+       "id": "V4.2.2",
+       "L": 3
+      },
+      {
+       "id": "V4.2.3",
+       "L": 3
+      },
+      {
+       "id": "V4.2.4",
+       "L": 3
+      },
+      {
+       "id": "V4.2.5",
+       "L": 3
+      }
+     ]
+    },
+    "V4.3": {
+     "name": "GraphQL",
+     "kind": "implementation",
+     "requirements": [
+      {
+       "id": "V4.3.1",
+       "L": 2
+      },
+      {
+       "id": "V4.3.2",
+       "L": 2
+      }
+     ]
+    },
+    "V4.4": {
+     "name": "WebSocket",
+     "kind": "implementation",
+     "requirements": [
+      {
+       "id": "V4.4.1",
+       "L": 1
+      },
+      {
+       "id": "V4.4.2",
+       "L": 2
+      },
+      {
+       "id": "V4.4.3",
+       "L": 2
+      },
+      {
+       "id": "V4.4.4",
+       "L": 2
+      }
+     ]
+    }
+   }
+  },
+  "V5": {
+   "name": "File Handling",
+   "sections": {
+    "V5.1": {
+     "name": "File Handling Documentation",
+     "kind": "documentation",
+     "requirements": [
+      {
+       "id": "V5.1.1",
+       "L": 2
+      }
+     ]
+    },
+    "V5.2": {
+     "name": "File Upload and Content",
+     "kind": "implementation",
+     "requirements": [
+      {
+       "id": "V5.2.1",
+       "L": 1
+      },
+      {
+       "id": "V5.2.2",
+       "L": 1
+      },
+      {
+       "id": "V5.2.3",
+       "L": 2
+      },
+      {
+       "id": "V5.2.4",
+       "L": 3
+      },
+      {
+       "id": "V5.2.5",
+       "L": 3
+      },
+      {
+       "id": "V5.2.6",
+       "L": 3
+      }
+     ]
+    },
+    "V5.3": {
+     "name": "File Storage",
+     "kind": "implementation",
+     "requirements": [
+      {
+       "id": "V5.3.1",
+       "L": 1
+      },
+      {
+       "id": "V5.3.2",
+       "L": 1
+      },
+      {
+       "id": "V5.3.3",
+       "L": 3
+      }
+     ]
+    },
+    "V5.4": {
+     "name": "File Download",
+     "kind": "implementation",
+     "requirements": [
+      {
+       "id": "V5.4.1",
+       "L": 2
+      },
+      {
+       "id": "V5.4.2",
+       "L": 2
+      },
+      {
+       "id": "V5.4.3",
+       "L": 2
+      }
+     ]
+    }
+   }
+  },
+  "V6": {
+   "name": "Authentication",
+   "sections": {
+    "V6.1": {
+     "name": "Authentication Documentation",
+     "kind": "documentation",
+     "requirements": [
+      {
+       "id": "V6.1.1",
+       "L": 1
+      },
+      {
+       "id": "V6.1.2",
+       "L": 2
+      },
+      {
+       "id": "V6.1.3",
+       "L": 2
+      }
+     ]
+    },
+    "V6.2": {
+     "name": "Password Security",
+     "kind": "implementation",
+     "requirements": [
+      {
+       "id": "V6.2.1",
+       "L": 1
+      },
+      {
+       "id": "V6.2.2",
+       "L": 1
+      },
+      {
+       "id": "V6.2.3",
+       "L": 1
+      },
+      {
+       "id": "V6.2.4",
+       "L": 1
+      },
+      {
+       "id": "V6.2.5",
+       "L": 1
+      },
+      {
+       "id": "V6.2.6",
+       "L": 1
+      },
+      {
+       "id": "V6.2.7",
+       "L": 1
+      },
+      {
+       "id": "V6.2.8",
+       "L": 1
+      },
+      {
+       "id": "V6.2.9",
+       "L": 2
+      },
+      {
+       "id": "V6.2.10",
+       "L": 2
+      },
+      {
+       "id": "V6.2.11",
+       "L": 2
+      },
+      {
+       "id": "V6.2.12",
+       "L": 2
+      }
+     ]
+    },
+    "V6.3": {
+     "name": "General Authentication Security",
+     "kind": "implementation",
+     "requirements": [
+      {
+       "id": "V6.3.1",
+       "L": 1
+      },
+      {
+       "id": "V6.3.2",
+       "L": 1
+      },
+      {
+       "id": "V6.3.3",
+       "L": 2
+      },
+      {
+       "id": "V6.3.4",
+       "L": 2
+      },
+      {
+       "id": "V6.3.5",
+       "L": 3
+      },
+      {
+       "id": "V6.3.6",
+       "L": 3
+      },
+      {
+       "id": "V6.3.7",
+       "L": 3
+      },
+      {
+       "id": "V6.3.8",
+       "L": 3
+      }
+     ]
+    },
+    "V6.4": {
+     "name": "Authentication Factor Lifecycle and Recovery",
+     "kind": "implementation",
+     "requirements": [
+      {
+       "id": "V6.4.1",
+       "L": 1
+      },
+      {
+       "id": "V6.4.2",
+       "L": 1
+      },
+      {
+       "id": "V6.4.3",
+       "L": 2
+      },
+      {
+       "id": "V6.4.4",
+       "L": 2
+      },
+      {
+       "id": "V6.4.5",
+       "L": 3
+      },
+      {
+       "id": "V6.4.6",
+       "L": 3
+      }
+     ]
+    },
+    "V6.5": {
+     "name": "General Multi-factor authentication requirements",
+     "kind": "implementation",
+     "requirements": [
+      {
+       "id": "V6.5.1",
+       "L": 2
+      },
+      {
+       "id": "V6.5.2",
+       "L": 2
+      },
+      {
+       "id": "V6.5.3",
+       "L": 2
+      },
+      {
+       "id": "V6.5.4",
+       "L": 2
+      },
+      {
+       "id": "V6.5.5",
+       "L": 2
+      },
+      {
+       "id": "V6.5.6",
+       "L": 3
+      },
+      {
+       "id": "V6.5.7",
+       "L": 3
+      },
+      {
+       "id": "V6.5.8",
+       "L": 3
+      }
+     ]
+    },
+    "V6.6": {
+     "name": "Out-of-Band authentication mechanisms",
+     "kind": "implementation",
+     "requirements": [
+      {
+       "id": "V6.6.1",
+       "L": 2
+      },
+      {
+       "id": "V6.6.2",
+       "L": 2
+      },
+      {
+       "id": "V6.6.3",
+       "L": 2
+      },
+      {
+       "id": "V6.6.4",
+       "L": 3
+      }
+     ]
+    },
+    "V6.7": {
+     "name": "Cryptographic authentication mechanism",
+     "kind": "implementation",
+     "requirements": [
+      {
+       "id": "V6.7.1",
+       "L": 3
+      },
+      {
+       "id": "V6.7.2",
+       "L": 3
+      }
+     ]
+    },
+    "V6.8": {
+     "name": "Authentication with an Identity Provider",
+     "kind": "implementation",
+     "requirements": [
+      {
+       "id": "V6.8.1",
+       "L": 2
+      },
+      {
+       "id": "V6.8.2",
+       "L": 2
+      },
+      {
+       "id": "V6.8.3",
+       "L": 2
+      },
+      {
+       "id": "V6.8.4",
+       "L": 2
+      }
+     ]
+    }
+   }
+  },
+  "V7": {
+   "name": "Session Management",
+   "sections": {
+    "V7.1": {
+     "name": "Session Management Documentation",
+     "kind": "documentation",
+     "requirements": [
+      {
+       "id": "V7.1.1",
+       "L": 2
+      },
+      {
+       "id": "V7.1.2",
+       "L": 2
+      },
+      {
+       "id": "V7.1.3",
+       "L": 2
+      }
+     ]
+    },
+    "V7.2": {
+     "name": "Fundamental Session Management Security",
+     "kind": "implementation",
+     "requirements": [
+      {
+       "id": "V7.2.1",
+       "L": 1
+      },
+      {
+       "id": "V7.2.2",
+       "L": 1
+      },
+      {
+       "id": "V7.2.3",
+       "L": 1
+      },
+      {
+       "id": "V7.2.4",
+       "L": 1
+      }
+     ]
+    },
+    "V7.3": {
+     "name": "Session Timeout",
+     "kind": "implementation",
+     "requirements": [
+      {
+       "id": "V7.3.1",
+       "L": 2
+      },
+      {
+       "id": "V7.3.2",
+       "L": 2
+      }
+     ]
+    },
+    "V7.4": {
+     "name": "Session Termination",
+     "kind": "implementation",
+     "requirements": [
+      {
+       "id": "V7.4.1",
+       "L": 1
+      },
+      {
+       "id": "V7.4.2",
+       "L": 1
+      },
+      {
+       "id": "V7.4.3",
+       "L": 2
+      },
+      {
+       "id": "V7.4.4",
+       "L": 2
+      },
+      {
+       "id": "V7.4.5",
+       "L": 2
+      }
+     ]
+    },
+    "V7.5": {
+     "name": "Defenses Against Session Abuse",
+     "kind": "implementation",
+     "requirements": [
+      {
+       "id": "V7.5.1",
+       "L": 2
+      },
+      {
+       "id": "V7.5.2",
+       "L": 2
+      },
+      {
+       "id": "V7.5.3",
+       "L": 3
+      }
+     ]
+    },
+    "V7.6": {
+     "name": "Federated Re-authentication",
+     "kind": "implementation",
+     "requirements": [
+      {
+       "id": "V7.6.1",
+       "L": 2
+      },
+      {
+       "id": "V7.6.2",
+       "L": 2
+      }
+     ]
+    }
+   }
+  },
+  "V8": {
+   "name": "Authorization",
+   "sections": {
+    "V8.1": {
+     "name": "Authorization Documentation",
+     "kind": "documentation",
+     "requirements": [
+      {
+       "id": "V8.1.1",
+       "L": 1
+      },
+      {
+       "id": "V8.1.2",
+       "L": 2
+      },
+      {
+       "id": "V8.1.3",
+       "L": 3
+      },
+      {
+       "id": "V8.1.4",
+       "L": 3
+      }
+     ]
+    },
+    "V8.2": {
+     "name": "General Authorization Design",
+     "kind": "implementation",
+     "requirements": [
+      {
+       "id": "V8.2.1",
+       "L": 1
+      },
+      {
+       "id": "V8.2.2",
+       "L": 1
+      },
+      {
+       "id": "V8.2.3",
+       "L": 2
+      },
+      {
+       "id": "V8.2.4",
+       "L": 3
+      }
+     ]
+    },
+    "V8.3": {
+     "name": "Operation Level Authorization",
+     "kind": "implementation",
+     "requirements": [
+      {
+       "id": "V8.3.1",
+       "L": 1
+      },
+      {
+       "id": "V8.3.2",
+       "L": 3
+      },
+      {
+       "id": "V8.3.3",
+       "L": 3
+      }
+     ]
+    },
+    "V8.4": {
+     "name": "Other Authorization Considerations",
+     "kind": "implementation",
+     "requirements": [
+      {
+       "id": "V8.4.1",
+       "L": 2
+      },
+      {
+       "id": "V8.4.2",
+       "L": 3
+      }
+     ]
+    }
+   }
+  },
+  "V9": {
+   "name": "Self-contained Tokens",
+   "sections": {
+    "V9.1": {
+     "name": "Token source and integrity",
+     "kind": "implementation",
+     "requirements": [
+      {
+       "id": "V9.1.1",
+       "L": 1
+      },
+      {
+       "id": "V9.1.2",
+       "L": 1
+      },
+      {
+       "id": "V9.1.3",
+       "L": 1
+      }
+     ]
+    },
+    "V9.2": {
+     "name": "Token content",
+     "kind": "implementation",
+     "requirements": [
+      {
+       "id": "V9.2.1",
+       "L": 1
+      },
+      {
+       "id": "V9.2.2",
+       "L": 2
+      },
+      {
+       "id": "V9.2.3",
+       "L": 2
+      },
+      {
+       "id": "V9.2.4",
+       "L": 2
+      }
+     ]
+    }
+   }
+  },
+  "V10": {
+   "name": "OAuth and OIDC",
+   "sections": {
+    "V10.1": {
+     "name": "Generic OAuth and OIDC Security",
+     "kind": "implementation",
+     "requirements": [
+      {
+       "id": "V10.1.1",
+       "L": 2
+      },
+      {
+       "id": "V10.1.2",
+       "L": 2
+      }
+     ]
+    },
+    "V10.2": {
+     "name": "OAuth Client",
+     "kind": "implementation",
+     "requirements": [
+      {
+       "id": "V10.2.1",
+       "L": 2
+      },
+      {
+       "id": "V10.2.2",
+       "L": 2
+      },
+      {
+       "id": "V10.2.3",
+       "L": 3
+      }
+     ]
+    },
+    "V10.3": {
+     "name": "OAuth Resource Server",
+     "kind": "implementation",
+     "requirements": [
+      {
+       "id": "V10.3.1",
+       "L": 2
+      },
+      {
+       "id": "V10.3.2",
+       "L": 2
+      },
+      {
+       "id": "V10.3.3",
+       "L": 2
+      },
+      {
+       "id": "V10.3.4",
+       "L": 2
+      },
+      {
+       "id": "V10.3.5",
+       "L": 3
+      }
+     ]
+    },
+    "V10.4": {
+     "name": "OAuth Authorization Server",
+     "kind": "implementation",
+     "requirements": [
+      {
+       "id": "V10.4.1",
+       "L": 1
+      },
+      {
+       "id": "V10.4.2",
+       "L": 1
+      },
+      {
+       "id": "V10.4.3",
+       "L": 1
+      },
+      {
+       "id": "V10.4.4",
+       "L": 1
+      },
+      {
+       "id": "V10.4.5",
+       "L": 1
+      },
+      {
+       "id": "V10.4.6",
+       "L": 2
+      },
+      {
+       "id": "V10.4.7",
+       "L": 2
+      },
+      {
+       "id": "V10.4.8",
+       "L": 2
+      },
+      {
+       "id": "V10.4.9",
+       "L": 2
+      },
+      {
+       "id": "V10.4.10",
+       "L": 2
+      },
+      {
+       "id": "V10.4.11",
+       "L": 2
+      },
+      {
+       "id": "V10.4.12",
+       "L": 3
+      },
+      {
+       "id": "V10.4.13",
+       "L": 3
+      },
+      {
+       "id": "V10.4.14",
+       "L": 3
+      },
+      {
+       "id": "V10.4.15",
+       "L": 3
+      },
+      {
+       "id": "V10.4.16",
+       "L": 3
+      }
+     ]
+    },
+    "V10.5": {
+     "name": "OIDC Client",
+     "kind": "implementation",
+     "requirements": [
+      {
+       "id": "V10.5.1",
+       "L": 2
+      },
+      {
+       "id": "V10.5.2",
+       "L": 2
+      },
+      {
+       "id": "V10.5.3",
+       "L": 2
+      },
+      {
+       "id": "V10.5.4",
+       "L": 2
+      },
+      {
+       "id": "V10.5.5",
+       "L": 2
+      }
+     ]
+    },
+    "V10.6": {
+     "name": "OpenID Provider",
+     "kind": "implementation",
+     "requirements": [
+      {
+       "id": "V10.6.1",
+       "L": 2
+      },
+      {
+       "id": "V10.6.2",
+       "L": 2
+      }
+     ]
+    },
+    "V10.7": {
+     "name": "Consent Management",
+     "kind": "implementation",
+     "requirements": [
+      {
+       "id": "V10.7.1",
+       "L": 2
+      },
+      {
+       "id": "V10.7.2",
+       "L": 2
+      },
+      {
+       "id": "V10.7.3",
+       "L": 2
+      }
+     ]
+    }
+   }
+  },
+  "V11": {
+   "name": "Cryptography",
+   "sections": {
+    "V11.1": {
+     "name": "Cryptographic Inventory and Documentation",
+     "kind": "documentation",
+     "requirements": [
+      {
+       "id": "V11.1.1",
+       "L": 2
+      },
+      {
+       "id": "V11.1.2",
+       "L": 2
+      },
+      {
+       "id": "V11.1.3",
+       "L": 3
+      },
+      {
+       "id": "V11.1.4",
+       "L": 3
+      }
+     ]
+    },
+    "V11.2": {
+     "name": "Secure Cryptography Implementation",
+     "kind": "implementation",
+     "requirements": [
+      {
+       "id": "V11.2.1",
+       "L": 2
+      },
+      {
+       "id": "V11.2.2",
+       "L": 2
+      },
+      {
+       "id": "V11.2.3",
+       "L": 2
+      },
+      {
+       "id": "V11.2.4",
+       "L": 3
+      },
+      {
+       "id": "V11.2.5",
+       "L": 3
+      }
+     ]
+    },
+    "V11.3": {
+     "name": "Encryption Algorithms",
+     "kind": "implementation",
+     "requirements": [
+      {
+       "id": "V11.3.1",
+       "L": 1
+      },
+      {
+       "id": "V11.3.2",
+       "L": 1
+      },
+      {
+       "id": "V11.3.3",
+       "L": 2
+      },
+      {
+       "id": "V11.3.4",
+       "L": 3
+      },
+      {
+       "id": "V11.3.5",
+       "L": 3
+      }
+     ]
+    },
+    "V11.4": {
+     "name": "Hashing and Hash-based Functions",
+     "kind": "implementation",
+     "requirements": [
+      {
+       "id": "V11.4.1",
+       "L": 1
+      },
+      {
+       "id": "V11.4.2",
+       "L": 2
+      },
+      {
+       "id": "V11.4.3",
+       "L": 2
+      },
+      {
+       "id": "V11.4.4",
+       "L": 2
+      }
+     ]
+    },
+    "V11.5": {
+     "name": "Random Values",
+     "kind": "implementation",
+     "requirements": [
+      {
+       "id": "V11.5.1",
+       "L": 2
+      },
+      {
+       "id": "V11.5.2",
+       "L": 3
+      }
+     ]
+    },
+    "V11.6": {
+     "name": "Public Key Cryptography",
+     "kind": "implementation",
+     "requirements": [
+      {
+       "id": "V11.6.1",
+       "L": 2
+      },
+      {
+       "id": "V11.6.2",
+       "L": 3
+      }
+     ]
+    },
+    "V11.7": {
+     "name": "In-Use Data Cryptography",
+     "kind": "implementation",
+     "requirements": [
+      {
+       "id": "V11.7.1",
+       "L": 3
+      },
+      {
+       "id": "V11.7.2",
+       "L": 3
+      }
+     ]
+    }
+   }
+  },
+  "V12": {
+   "name": "Secure Communication",
+   "sections": {
+    "V12.1": {
+     "name": "General TLS Security Guidance",
+     "kind": "implementation",
+     "requirements": [
+      {
+       "id": "V12.1.1",
+       "L": 1
+      },
+      {
+       "id": "V12.1.2",
+       "L": 2
+      },
+      {
+       "id": "V12.1.3",
+       "L": 2
+      },
+      {
+       "id": "V12.1.4",
+       "L": 3
+      },
+      {
+       "id": "V12.1.5",
+       "L": 3
+      }
+     ]
+    },
+    "V12.2": {
+     "name": "HTTPS Communication with External Facing Services",
+     "kind": "implementation",
+     "requirements": [
+      {
+       "id": "V12.2.1",
+       "L": 1
+      },
+      {
+       "id": "V12.2.2",
+       "L": 1
+      }
+     ]
+    },
+    "V12.3": {
+     "name": "General Service to Service Communication Security",
+     "kind": "implementation",
+     "requirements": [
+      {
+       "id": "V12.3.1",
+       "L": 2
+      },
+      {
+       "id": "V12.3.2",
+       "L": 2
+      },
+      {
+       "id": "V12.3.3",
+       "L": 2
+      },
+      {
+       "id": "V12.3.4",
+       "L": 2
+      },
+      {
+       "id": "V12.3.5",
+       "L": 3
+      }
+     ]
+    }
+   }
+  },
+  "V13": {
+   "name": "Configuration",
+   "sections": {
+    "V13.1": {
+     "name": "Configuration Documentation",
+     "kind": "documentation",
+     "requirements": [
+      {
+       "id": "V13.1.1",
+       "L": 2
+      },
+      {
+       "id": "V13.1.2",
+       "L": 3
+      },
+      {
+       "id": "V13.1.3",
+       "L": 3
+      },
+      {
+       "id": "V13.1.4",
+       "L": 3
+      }
+     ]
+    },
+    "V13.2": {
+     "name": "Backend Communication Configuration",
+     "kind": "implementation",
+     "requirements": [
+      {
+       "id": "V13.2.1",
+       "L": 2
+      },
+      {
+       "id": "V13.2.2",
+       "L": 2
+      },
+      {
+       "id": "V13.2.3",
+       "L": 2
+      },
+      {
+       "id": "V13.2.4",
+       "L": 2
+      },
+      {
+       "id": "V13.2.5",
+       "L": 2
+      },
+      {
+       "id": "V13.2.6",
+       "L": 3
+      }
+     ]
+    },
+    "V13.3": {
+     "name": "Secret Management",
+     "kind": "implementation",
+     "requirements": [
+      {
+       "id": "V13.3.1",
+       "L": 2
+      },
+      {
+       "id": "V13.3.2",
+       "L": 2
+      },
+      {
+       "id": "V13.3.3",
+       "L": 3
+      },
+      {
+       "id": "V13.3.4",
+       "L": 3
+      }
+     ]
+    },
+    "V13.4": {
+     "name": "Unintended Information Leakage",
+     "kind": "implementation",
+     "requirements": [
+      {
+       "id": "V13.4.1",
+       "L": 1
+      },
+      {
+       "id": "V13.4.2",
+       "L": 2
+      },
+      {
+       "id": "V13.4.3",
+       "L": 2
+      },
+      {
+       "id": "V13.4.4",
+       "L": 2
+      },
+      {
+       "id": "V13.4.5",
+       "L": 2
+      },
+      {
+       "id": "V13.4.6",
+       "L": 3
+      },
+      {
+       "id": "V13.4.7",
+       "L": 3
+      }
+     ]
+    }
+   }
+  },
+  "V14": {
+   "name": "Data Protection",
+   "sections": {
+    "V14.1": {
+     "name": "Data Protection Documentation",
+     "kind": "documentation",
+     "requirements": [
+      {
+       "id": "V14.1.1",
+       "L": 2
+      },
+      {
+       "id": "V14.1.2",
+       "L": 2
+      }
+     ]
+    },
+    "V14.2": {
+     "name": "General Data Protection",
+     "kind": "implementation",
+     "requirements": [
+      {
+       "id": "V14.2.1",
+       "L": 1
+      },
+      {
+       "id": "V14.2.2",
+       "L": 2
+      },
+      {
+       "id": "V14.2.3",
+       "L": 2
+      },
+      {
+       "id": "V14.2.4",
+       "L": 2
+      },
+      {
+       "id": "V14.2.5",
+       "L": 3
+      },
+      {
+       "id": "V14.2.6",
+       "L": 3
+      },
+      {
+       "id": "V14.2.7",
+       "L": 3
+      },
+      {
+       "id": "V14.2.8",
+       "L": 3
+      }
+     ]
+    },
+    "V14.3": {
+     "name": "Client-side Data Protection",
+     "kind": "implementation",
+     "requirements": [
+      {
+       "id": "V14.3.1",
+       "L": 1
+      },
+      {
+       "id": "V14.3.2",
+       "L": 2
+      },
+      {
+       "id": "V14.3.3",
+       "L": 2
+      }
+     ]
+    }
+   }
+  },
+  "V15": {
+   "name": "Secure Coding and Architecture",
+   "sections": {
+    "V15.1": {
+     "name": "Secure Coding and Architecture Documentation",
+     "kind": "documentation",
+     "requirements": [
+      {
+       "id": "V15.1.1",
+       "L": 1
+      },
+      {
+       "id": "V15.1.2",
+       "L": 2
+      },
+      {
+       "id": "V15.1.3",
+       "L": 2
+      },
+      {
+       "id": "V15.1.4",
+       "L": 3
+      },
+      {
+       "id": "V15.1.5",
+       "L": 3
+      }
+     ]
+    },
+    "V15.2": {
+     "name": "Security Architecture and Dependencies",
+     "kind": "implementation",
+     "requirements": [
+      {
+       "id": "V15.2.1",
+       "L": 1
+      },
+      {
+       "id": "V15.2.2",
+       "L": 2
+      },
+      {
+       "id": "V15.2.3",
+       "L": 2
+      },
+      {
+       "id": "V15.2.4",
+       "L": 3
+      },
+      {
+       "id": "V15.2.5",
+       "L": 3
+      }
+     ]
+    },
+    "V15.3": {
+     "name": "Defensive Coding",
+     "kind": "implementation",
+     "requirements": [
+      {
+       "id": "V15.3.1",
+       "L": 1
+      },
+      {
+       "id": "V15.3.2",
+       "L": 2
+      },
+      {
+       "id": "V15.3.3",
+       "L": 2
+      },
+      {
+       "id": "V15.3.4",
+       "L": 2
+      },
+      {
+       "id": "V15.3.5",
+       "L": 2
+      },
+      {
+       "id": "V15.3.6",
+       "L": 2
+      },
+      {
+       "id": "V15.3.7",
+       "L": 2
+      }
+     ]
+    },
+    "V15.4": {
+     "name": "Safe Concurrency",
+     "kind": "implementation",
+     "requirements": [
+      {
+       "id": "V15.4.1",
+       "L": 3
+      },
+      {
+       "id": "V15.4.2",
+       "L": 3
+      },
+      {
+       "id": "V15.4.3",
+       "L": 3
+      },
+      {
+       "id": "V15.4.4",
+       "L": 3
+      }
+     ]
+    }
+   }
+  },
+  "V16": {
+   "name": "Security Logging and Error Handling",
+   "sections": {
+    "V16.1": {
+     "name": "Security Logging Documentation",
+     "kind": "documentation",
+     "requirements": [
+      {
+       "id": "V16.1.1",
+       "L": 2
+      }
+     ]
+    },
+    "V16.2": {
+     "name": "General Logging",
+     "kind": "implementation",
+     "requirements": [
+      {
+       "id": "V16.2.1",
+       "L": 2
+      },
+      {
+       "id": "V16.2.2",
+       "L": 2
+      },
+      {
+       "id": "V16.2.3",
+       "L": 2
+      },
+      {
+       "id": "V16.2.4",
+       "L": 2
+      },
+      {
+       "id": "V16.2.5",
+       "L": 2
+      }
+     ]
+    },
+    "V16.3": {
+     "name": "Security Events",
+     "kind": "implementation",
+     "requirements": [
+      {
+       "id": "V16.3.1",
+       "L": 2
+      },
+      {
+       "id": "V16.3.2",
+       "L": 2
+      },
+      {
+       "id": "V16.3.3",
+       "L": 2
+      },
+      {
+       "id": "V16.3.4",
+       "L": 2
+      }
+     ]
+    },
+    "V16.4": {
+     "name": "Log Protection",
+     "kind": "implementation",
+     "requirements": [
+      {
+       "id": "V16.4.1",
+       "L": 2
+      },
+      {
+       "id": "V16.4.2",
+       "L": 2
+      },
+      {
+       "id": "V16.4.3",
+       "L": 2
+      }
+     ]
+    },
+    "V16.5": {
+     "name": "Error Handling",
+     "kind": "implementation",
+     "requirements": [
+      {
+       "id": "V16.5.1",
+       "L": 2
+      },
+      {
+       "id": "V16.5.2",
+       "L": 2
+      },
+      {
+       "id": "V16.5.3",
+       "L": 2
+      },
+      {
+       "id": "V16.5.4",
+       "L": 3
+      }
+     ]
+    }
+   }
+  },
+  "V17": {
+   "name": "WebRTC",
+   "sections": {
+    "V17.1": {
+     "name": "TURN Server",
+     "kind": "implementation",
+     "requirements": [
+      {
+       "id": "V17.1.1",
+       "L": 2
+      },
+      {
+       "id": "V17.1.2",
+       "L": 3
+      }
+     ]
+    },
+    "V17.2": {
+     "name": "Media",
+     "kind": "implementation",
+     "requirements": [
+      {
+       "id": "V17.2.1",
+       "L": 2
+      },
+      {
+       "id": "V17.2.2",
+       "L": 2
+      },
+      {
+       "id": "V17.2.3",
+       "L": 2
+      },
+      {
+       "id": "V17.2.4",
+       "L": 2
+      },
+      {
+       "id": "V17.2.5",
+       "L": 3
+      },
+      {
+       "id": "V17.2.6",
+       "L": 3
+      },
+      {
+       "id": "V17.2.7",
+       "L": 3
+      },
+      {
+       "id": "V17.2.8",
+       "L": 3
+      }
+     ]
+    },
+    "V17.3": {
+     "name": "Signaling",
+     "kind": "implementation",
+     "requirements": [
+      {
+       "id": "V17.3.1",
+       "L": 2
+      },
+      {
+       "id": "V17.3.2",
+       "L": 2
+      }
+     ]
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,123 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "owasp-audit/finding.schema.json",
+ "title": "owasp-audit findings file",
+ "description": "Archivo findings.json producido en la etapa 5. validate_findings.py comprueba estas reglas sin dependencias externas.",
+ "type": "object",
+ "required": ["meta", "findings", "excluded_findings"],
+ "properties": {
+  "meta": {
+   "type": "object",
+   "required": ["commit", "model", "date", "mode", "asvs_target"],
+   "properties": {
+    "commit": {"type": "string"},
+    "model": {"type": "string"},
+    "date": {"type": "string"},
+    "mode": {"enum": ["audit", "arquitectura"]},
+    "asvs_target": {"enum": [1, 2, 3]}
+   }
+  },
+  "findings": {"type": "array", "items": {"$ref": "#/$defs/finding"}},
+  "excluded_findings": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": ["id", "title", "exclusion_reason", "filter_stage"],
+    "properties": {
+     "id": {"type": "string"},
+     "title": {"type": "string"},
+     "exclusion_reason": {"type": "string", "minLength": 10},
+     "filter_stage": {"enum": ["tool_dedup", "verifier", "confidence_below_0.5", "out_of_scope", "baseline_known", "accepted_exception"]},
+     "cwe": {"type": "array", "items": {"type": "string", "pattern": "^CWE-[0-9]+$"}},
+     "human_confirmed": {"type": "boolean", "description": "Obligatorio true si filter_stage=verifier y alguna CWE está en verification-policy.protected_cwes"}
+    }
+   }
+  }
+ },
+ "$defs": {
+  "finding": {
+   "type": "object",
+   "required": ["id", "title", "type", "owasp", "cwe", "component", "evidence", "attack_scenario", "compensating_controls", "risk", "severity", "confidence", "verification", "recommendation"],
+   "properties": {
+    "id": {"type": "string", "pattern": "^(IMPL|DES|LLM|SUP)-[0-9]{3}$"},
+    "title": {"type": "string", "minLength": 8},
+    "type": {"enum": ["implementation", "design"]},
+    "owasp": {
+     "type": "object",
+     "required": ["top10_2025"],
+     "properties": {
+      "top10_2025": {"type": ["string", "null"], "pattern": "^A(0[1-9]|10)$"},
+      "top10_2021": {"type": ["string", "null"]},
+      "api_2023": {"type": ["string", "null"], "pattern": "^API([1-9]|10)$"},
+      "llm_2025": {"type": ["string", "null"], "pattern": "^LLM(0[1-9]|10)$"},
+      "asi_2026": {"type": ["string", "null"], "pattern": "^ASI(0[1-9]|10)$"}
+     }
+    },
+    "asvs": {"type": "array", "items": {"type": "string", "pattern": "^v5\\.0\\.0-[0-9]+\\.[0-9]+\\.[0-9]+$"}},
+    "cwe": {"type": "array", "minItems": 1, "items": {"type": "string", "pattern": "^CWE-[0-9]+$"}},
+    "stride": {"type": "array", "items": {"enum": ["S", "T", "R", "I", "D", "E"]}},
+    "component": {"type": "string"},
+    "trust_boundary": {"type": "string"},
+    "evidence": {
+     "type": "array",
+     "minItems": 1,
+     "items": {
+      "type": "object",
+      "required": ["kind"],
+      "properties": {
+       "kind": {"enum": ["code", "absence", "config", "tool", "test"]},
+       "file": {"type": "string"},
+       "line": {"type": "integer", "minimum": 1},
+       "snippet": {"type": "string"},
+       "query": {"type": "string"},
+       "hits": {"type": "integer"},
+       "tool": {"type": "string"},
+       "rule_id": {"type": "string"}
+      }
+     }
+    },
+    "attack_scenario": {
+     "type": "object",
+     "required": ["preconditions", "steps", "impact"],
+     "properties": {
+      "preconditions": {"type": "string"},
+      "steps": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+      "impact": {"type": "string"}
+     }
+    },
+    "compensating_controls": {"type": "string"},
+    "risk": {
+     "type": "object",
+     "required": ["method", "likelihood", "impact"],
+     "properties": {
+      "method": {"enum": ["owasp_rr"]},
+      "likelihood": {"type": "number", "minimum": 0, "maximum": 9},
+      "impact": {"type": "number", "minimum": 0, "maximum": 9},
+      "cvss_4_0": {"type": ["string", "null"], "pattern": "^CVSS:4\\.0/"}
+     }
+    },
+    "severity": {"enum": ["Critical", "High", "Medium", "Low", "Note"]},
+    "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+    "verification": {
+     "type": "object",
+     "required": ["status", "method", "verifier"],
+     "properties": {
+      "status": {"enum": ["VERIFIED", "LIKELY", "UNVERIFIED", "REFUTED"]},
+      "method": {"type": "array", "items": {"enum": ["trace", "absence_search", "failing_test", "tool_corroboration", "human", "second_model"]}},
+      "verifier": {"type": "string"},
+      "notes": {"type": "string"}
+     }
+    },
+    "recommendation": {
+     "type": "object",
+     "required": ["architectural", "quick_fix"],
+     "properties": {"architectural": {"type": "string"}, "quick_fix": {"type": "string"}}
+    },
+    "test": {"type": ["string", "null"]},
+    "remediation_refs": {"type": "array", "items": {"type": "string"}},
+    "effort": {"enum": ["S", "M", "L"]},
+    "status": {"enum": ["open", "fixed", "accepted"]}
+   }
+  }
+ }
+}
