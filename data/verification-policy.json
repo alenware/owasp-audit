@@ -31,7 +31,7 @@
   "High": 8.0,
   "Medium": 5.5,
   "Low": 2.5,
-  "Note": 0.0
+  "Note": 1.0
  },
  "sarif_note": "GitHub code scanning: >9.0 critical, 7.0-8.9 high, 4.0-6.9 medium, 0.1-3.9 low (docs.github.com, sarif-support-for-code-scanning, comprobado 2026-11-16)."
 }

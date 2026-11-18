@@ -211,6 +211,42 @@ class SarifTests(Base):
         self.assertIn("CWE-639", rule["properties"]["tags"])
         self.assertEqual(s["runs"][0]["results"][0]["level"], "error")
 
+    def _export(self, findings_list, meta=None):
+        doc = {"meta": meta or META, "findings": findings_list, "excluded_findings": []}
+        out = self.tmp / "x.sarif"
+        r = run("findings_to_sarif.py", str(self.write("x.json", doc)), "--out", str(out))
+        self.assertEqual(r.returncode, 0, r.stderr)
+        return json.loads(out.read_text(encoding="utf-8"))["runs"][0]
+
+    def test_rule_id_is_stable_across_numbering(self):
+        a = copy.deepcopy(VALID_FINDING)
+        b = copy.deepcopy(VALID_FINDING)
+        b["id"] = "IMPL-007"
+        self.assertEqual(self._export([a])["results"][0]["ruleId"], self._export([b])["results"][0]["ruleId"])
+        run_ = self._export([a, b])
+        self.assertEqual(len(run_["tool"]["driver"]["rules"]), 1)
+        self.assertEqual({r["properties"]["findingId"] for r in run_["results"]}, {"IMPL-001", "IMPL-007"})
+
+    def test_every_result_has_file_and_line(self):
+        design = copy.deepcopy(VALID_FINDING)
+        design["id"], design["type"] = "DES-001", "design"
+        design["evidence"] = [{"kind": "absence", "query": "rg policy src", "hits": 0}]
+        no_line = copy.deepcopy(VALID_FINDING)
+        no_line["evidence"] = [{"kind": "config", "file": "package.json"}]
+        for res in self._export([design, no_line])["results"]:
+            loc = res["locations"][0]["physicalLocation"]
+            self.assertTrue(loc["artifactLocation"]["uri"])
+            self.assertGreaterEqual(loc["region"]["startLine"], 1)
+
+    def test_note_is_not_zero_and_no_empty_repo_uri(self):
+        f = copy.deepcopy(VALID_FINDING)
+        f["severity"] = "Note"
+        run_ = self._export([f])
+        self.assertEqual(run_["tool"]["driver"]["rules"][0]["properties"]["security-severity"], "1.0")
+        self.assertNotIn("versionControlProvenance", run_)
+        run_ = self._export([f], {**META, "repo": "https://github.com/x/y", "commit": "abc123"})
+        self.assertEqual(run_["versionControlProvenance"][0]["repositoryUri"], "https://github.com/x/y")
+
 
 class DetectStackTests(Base):
     def test_detects_express_llm_and_ci(self):
