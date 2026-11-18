@@ -43,6 +43,8 @@ En Windows nativo los scripts también funcionan con `python`, pero las rutas de
 
 ## Uso
 
+La [guía de uso](docs/GUIA-DE-USO.md) explica paso a paso la instalación, las preguntas iniciales, cómo leer el informe, cómo subir los hallazgos a GitHub y cómo repetir la auditoría.
+
 Desde la raíz del proyecto, en Claude Code:
 
 ```
