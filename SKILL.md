@@ -28,7 +28,7 @@ Evalúa un repositorio como lo haría un revisor de seguridad senior y deja el p
 | `arquitectura` | Solo diseño: threat model, scorecard, ASVS de documentación. No busca bugs de implementación | 0, 1, 2, 5 (solo hallazgos `DES-`), 6, 8 (y borrador de matriz en 7) |
 | `+llm` | Se suma solo cuando `detect_stack.py` marca `suggested_llm_mode` | Añade LLM Top 10 y ASI a las etapas 2, 4 y 7 |
 
-Para revisar un diff o un PR, recomienda `/security-review`. Si el usuario ya tiene SARIF de `/security-review`, `claude-security`, Semgrep u otra herramienta, úsalo como entrada en la etapa 3 en vez de repetir esa búsqueda.
+Para revisar solo un diff o un PR, recomienda la herramienta de revisión de diffs del agente si la tiene (en Claude Code, `/security-review`). Si el usuario ya tiene SARIF de otra herramienta (Semgrep, CodeQL o una revisión anterior), úsalo como entrada en la etapa 3 en vez de repetir esa búsqueda.
 
 ## Rutas
 

@@ -19,7 +19,7 @@ Cómo instalar la skill, lanzar una auditoría, leer lo que produce y repetirla 
 
 ## 1. Requisitos
 
-- [Claude Code](https://docs.claude.com/en/docs/claude-code) instalado y con sesión iniciada.
+- Un agente de IA que pueda leer archivos y ejecutar comandos: Claude Code, Codex, Cursor, Gemini CLI u otro. La skill se probó con Claude Code.
 - Python 3.10 o superior. Los scripts solo usan la biblioteca estándar.
 - bash, para `install.sh`. En Windows, usa WSL.
 - El repositorio que quieres auditar, en una carpeta local.
@@ -27,7 +27,6 @@ Cómo instalar la skill, lanzar una auditoría, leer lo que produce y repetirla 
 Comprobación rápida:
 
 ```bash
-claude --version
 python3 --version
 ```
 
@@ -41,17 +40,25 @@ cd ~/code/owasp-audit
 ./install.sh
 ```
 
-`install.sh` pasa los tests de los scripts y copia la skill a `~/.claude/skills/owasp-audit`. Opciones:
+`install.sh` pasa los tests de los scripts y copia la skill a `~/.claude/skills/owasp-audit`, la carpeta de Claude Code. Opciones:
 
 | Opción | Qué hace |
 |---|---|
 | `--link` | Crea un enlace simbólico en lugar de copiar. Útil si vas a editar la skill: los cambios del repo se aplican sin reinstalar |
 | `--project` | Instala en `.claude/skills/` del directorio actual, solo para ese proyecto |
+| `--dest <carpeta>` | Instala en la carpeta de skills de otro agente |
 | `--check` | Comprueba requisitos y pasa los tests, sin instalar nada |
 
 Si ya existe una instalación, la mueve a `owasp-audit.bak.<fecha>` antes de instalar.
 
-### Claude Code en WSL
+### Otros agentes
+
+- **Con soporte de skills:** instala en su carpeta de skills con `./install.sh --dest <carpeta>`. La ruta exacta depende del agente; consúltala en su documentación.
+- **Sin soporte de skills:** no hace falta instalar nada. Clona el repositorio y pide al agente: "lee `~/code/owasp-audit/SKILL.md` y síguelo para auditar este repo". Para no repetirlo, añade esa instrucción al `AGENTS.md` del proyecto.
+
+Si el agente no puede lanzar subagentes, la skill recorre los componentes uno a uno y hace la verificación en una pasada aparte.
+
+### Ejemplo: Claude Code en WSL
 
 Si Claude Code solo está instalado en Windows, instálalo también dentro de WSL:
 
@@ -63,11 +70,11 @@ Abre una terminal nueva de Ubuntu y ejecuta `claude`. La primera vez te pide ini
 
 ### Windows sin WSL
 
-Copia la carpeta del repositorio a `C:\Users\<tu-usuario>\.claude\skills\owasp-audit`. Funciona, con una limitación: Python falla con rutas de más de 260 caracteres (ver la sección 11).
+Copia la carpeta del repositorio a la carpeta de skills de tu agente; en Claude Code es `C:\Users\<tu-usuario>\.claude\skills\owasp-audit`. Funciona, con una limitación: Python falla con rutas de más de 260 caracteres (ver la sección 11).
 
 ## 3. Primera auditoría
 
-Entra en la carpeta del proyecto y abre Claude Code:
+Entra en la carpeta del proyecto y abre tu agente. Con Claude Code:
 
 ```bash
 cd ~/code/mi-proyecto
@@ -84,7 +91,7 @@ hazme un threat model del backend y guárdalo en el repo
 revisa el agente y sus herramientas contra el OWASP LLM Top 10
 ```
 
-Si Claude no la carga solo, nómbrala: "usa la skill owasp-audit".
+Si el agente no la carga solo, nómbrala: "usa la skill owasp-audit". En un agente sin soporte de skills: "lee `owasp-audit/SKILL.md` y síguelo".
 
 **Cuánto tarda.** En las apps de prueba de `evals/` (de 6 a 10 archivos), cada auditoría completa tardó entre 24 y 30 minutos. En un repo grande tardará más; empieza por un proyecto pequeño.
 
@@ -254,12 +261,12 @@ Lo que no está instalado aparece en el informe como "no ejecutado", nunca como 
 
 | Problema | Solución |
 |---|---|
-| La skill no se activa | Nómbrala en el mensaje. Comprueba que existe `~/.claude/skills/owasp-audit/SKILL.md` |
+| La skill no se activa | Nómbrala en el mensaje. Comprueba que `SKILL.md` está en la carpeta de skills de tu agente (en Claude Code, `~/.claude/skills/owasp-audit/`) |
 | Python falla con `FileNotFoundError` en Windows | La ruta supera 260 caracteres. Trabaja desde WSL o mueve el repo a una ruta más corta |
 | `python3` no existe en Windows | Allí se llama `python`. La skill lo tiene en cuenta |
 | Tarda mucho | Usa el modo `arquitectura`, o limita la auditoría a una carpeta: "audita solo `src/api`" |
 | Demasiados hallazgos "a revisar" | Son los que el verificador no pudo confirmar. Ejecuta sus tests para confirmarlos o descartarlos |
-| Quieres revisar solo un PR | Usa `/security-review`. Esta skill evalúa el proyecto entero |
+| Quieres revisar solo un PR | Usa la revisión de diffs de tu agente, por ejemplo `/security-review` en Claude Code. Esta skill evalúa el proyecto entero |
 
 ## 12. Actualizar y desinstalar
 
@@ -275,7 +282,7 @@ Si instalaste copiando:
 cd ~/code/owasp-audit && git pull && ./install.sh
 ```
 
-Desinstalar:
+Desinstalar (ejemplo con la carpeta de Claude Code; usa la de tu agente):
 
 ```bash
 rm -r ~/.claude/skills/owasp-audit

@@ -1,8 +1,10 @@
 # owasp-audit
 
-Una [skill de Claude Code](https://docs.claude.com/en/docs/claude-code/skills) que evalúa la seguridad de un repositorio completo con los estándares de OWASP: threat model, verificación contra ASVS 5.0, revisión de arquitectura, hallazgos con evidencia `archivo:línea` y tests de seguridad para CI.
+Una skill para agentes de IA que evalúa la seguridad de un repositorio completo con los estándares de OWASP: threat model, verificación contra ASVS 5.0, revisión de arquitectura, hallazgos con evidencia `archivo:línea` y tests de seguridad para CI.
 
-*English summary: a Claude Code skill that audits a whole codebase against OWASP (ASVS 5.0, Top 10:2025, API Top 10 2023, LLM and Agentic Top 10). It writes a threat model, verified findings with file:line evidence, an ASVS checklist, an architecture scorecard, SARIF and security regression tests. Instructions and reports are in Spanish; requests in English also work.*
+Usa el formato abierto de skills: una carpeta con `SKILL.md`, guías de referencia, datos y scripts en Python sin dependencias. Sirve para cualquier agente que pueda leer archivos y ejecutar comandos, como Claude Code, Codex, Cursor o Gemini CLI. Las pruebas de la sección Evaluación se hicieron con Claude Code.
+
+*English summary: an AI agent skill that audits a whole codebase against OWASP (ASVS 5.0, Top 10:2025, API Top 10 2023, LLM and Agentic Top 10). It writes a threat model, verified findings with file:line evidence, an ASVS checklist, an architecture scorecard, SARIF and security regression tests. It uses the open SKILL.md format, so any agent that can read files and run commands can follow it (Claude Code, Codex, Cursor, Gemini CLI and others); it was tested with Claude Code. Instructions and reports are in Spanish; requests in English also work.*
 
 ## Qué produce
 
@@ -30,13 +32,14 @@ Requisitos: Python 3.10 o superior (solo biblioteca estándar) y bash. Funciona 
 ```bash
 git clone https://github.com/alenware/owasp-audit.git
 cd owasp-audit
-./install.sh            # copia la skill a ~/.claude/skills/owasp-audit
+./install.sh            # copia la skill a ~/.claude/skills/owasp-audit (Claude Code)
 ```
 
 Otras opciones:
 
 - `./install.sh --link`: enlace simbólico en lugar de copia, para editar la skill en el repo.
 - `./install.sh --project`: instala en `.claude/skills/` del directorio actual.
+- `./install.sh --dest <carpeta>`: instala en la carpeta de skills de otro agente.
 - `./install.sh --check`: comprueba requisitos y pasa los tests de los scripts sin instalar.
 
 En Windows nativo los scripts también funcionan con `python`, pero las rutas de más de 260 caracteres hacen fallar a Python; WSL evita ese problema.
@@ -45,7 +48,7 @@ En Windows nativo los scripts también funcionan con `python`, pero las rutas de
 
 La [guía de uso](docs/GUIA-DE-USO.md) explica paso a paso la instalación, las preguntas iniciales, cómo leer el informe, cómo subir los hallazgos a GitHub y cómo repetir la auditoría.
 
-Desde la raíz del proyecto, en Claude Code:
+Desde la raíz del proyecto, en tu agente:
 
 ```
 haz una auditoría de seguridad OWASP de este repo, nivel ASVS L2
@@ -55,11 +58,26 @@ La skill pregunta primero el alcance: modo (`audit` o `arquitectura`), nivel ASV
 
 Herramientas opcionales que usa si están instaladas: Semgrep, gitleaks, trufflehog, OSV-Scanner, Trivy, Checkov. Lo que no está instalado aparece en el informe como "no ejecutado".
 
+## Agentes compatibles
+
+La skill necesita un agente que pueda:
+
+- leer y escribir archivos del repositorio;
+- ejecutar comandos de shell y Python 3.10 o superior;
+- idealmente, lanzar subagentes. Sin ellos, recorre los componentes uno a uno y verifica en una pasada aparte.
+
+Cómo cargarla:
+
+| Tipo de agente | Qué hacer |
+|---|---|
+| Con soporte de skills (`SKILL.md`) | Copia la carpeta a su directorio de skills. Para Claude Code es `~/.claude/skills/`; para otros agentes, consulta su documentación y usa `./install.sh --dest <carpeta>` |
+| Sin soporte de skills | Deja el repositorio en una carpeta accesible y pide: "lee `owasp-audit/SKILL.md` y síguelo para auditar este repo". También puedes enlazarlo desde el `AGENTS.md` del proyecto |
+
 ## Estructura
 
 | Carpeta | Contenido |
 |---|---|
-| `SKILL.md` | Flujo de 9 etapas que sigue Claude |
+| `SKILL.md` | Flujo de 9 etapas que sigue el agente |
 | `reference/` | 12 guías: catálogos OWASP, threat modeling, criterios de arquitectura, ASVS, severidad, verificación, herramientas, plantillas de tests, plantilla del informe |
 | `data/` | ASVS 5.0.0 oficial, CWE → Top 10:2025, equivalencias 2021 ↔ 2025, ASVS → Cheat Sheets, política de verificación, esquema de hallazgos |
 | `scripts/` | `detect_stack.py`, `ingest_sarif.py`, `validate_findings.py`, `score.py`, `findings_to_sarif.py`, `build_data.py` y sus tests |

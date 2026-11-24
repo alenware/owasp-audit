@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
-# Instala la skill owasp-audit para Claude Code en Linux, macOS o WSL.
+# Instala la skill owasp-audit para un agente de IA en Linux, macOS o WSL.
+# Por defecto usa la carpeta de skills de Claude Code; --dest acepta la de cualquier otro agente.
 #
 #   ./install.sh            copia la skill a ~/.claude/skills/owasp-audit
 #   ./install.sh --link     crea un enlace simbólico (útil si editas la skill en este repo)
 #   ./install.sh --project  instala en ./.claude/skills/owasp-audit del directorio actual
+#   ./install.sh --dest DIR instala en DIR/owasp-audit (carpeta de skills de otro agente)
 #   ./install.sh --check    solo comprueba requisitos y pasa los tests de los scripts
 #
 # Requisitos: bash, python3 >= 3.10 (solo biblioteca estándar). Opcional: docker o las herramientas
@@ -14,12 +16,15 @@ SRC="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 MODE="copy"
 DEST="${HOME}/.claude/skills/owasp-audit"
 
+NEXT_IS_DEST=0
 for arg in "$@"; do
+  if [[ "$NEXT_IS_DEST" == 1 ]]; then DEST="${arg%/}/owasp-audit"; NEXT_IS_DEST=0; continue; fi
   case "$arg" in
+    --dest) NEXT_IS_DEST=1 ;;
     --link) MODE="link" ;;
     --project) DEST="$(pwd)/.claude/skills/owasp-audit" ;;
     --check) MODE="check" ;;
-    -h|--help) sed -n '2,10p' "$0"; exit 0 ;;
+    -h|--help) sed -n '2,13p' "$0"; exit 0 ;;
     *) echo "Opción desconocida: $arg" >&2; exit 2 ;;
   esac
 done
@@ -64,4 +69,4 @@ else
   tar -C "$SRC" --exclude='./.git' --exclude='*/__pycache__' --exclude='./scripts/tests/__pycache__' -cf - . | tar -C "$DEST" -xf -
   echo "Skill copiada en $DEST"
 fi
-echo "Listo. En Claude Code, pide por ejemplo: \"haz una auditoría OWASP de este repo\"."
+echo "Listo. En tu agente, pide por ejemplo: \"haz una auditoría OWASP de este repo\"."
